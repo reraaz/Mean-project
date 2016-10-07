@@ -41,10 +41,7 @@ router.post('/addUser', function(req,res){
 			if(err) throw err;
 			console.log(user);
 		});
-		console.log(name);
-		console.log(add);
-		console.log(email);
-		console.log(status);
+		
 
 		// req.flash('success_msg','You are registered and now log in');
 		res.redirect('/');
