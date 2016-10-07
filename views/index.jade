@@ -1,0 +1,23 @@
+extends layout
+
+block content
+ div.container
+  h1 All Users	
+  table.table.table-bordered.table-striped.table-hover
+   tr
+    th Id
+    th Name
+    th Address
+    th Email
+    th Status
+    th Action
+   tr
+    td 1
+    td Raj Kumar Koju
+    td Bhaktapur
+    td koju96@gmail.com
+    td Active
+    td
+     a.btn.btn-success.btn-sm(href='users/edit') Edit
+     a.btn.btn-danger.btn-sm(href='users/delete') Delete	
+  a.pull-right.btn.btn-primary.btn-sm(href='users/addUser') Add User

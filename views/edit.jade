@@ -1,0 +1,19 @@
+extends layout
+
+block content
+ div.container
+  h1 Edit User
+  div.form-group
+   label#name User Name:
+   input.form-control#name(type='text')
+  div.form-group
+   label#add Address:
+   input.form-control#add(type='text')
+  div.form-group
+   label#email Email:
+   input.form-control#email(type='text')
+  div.form-group
+   label#status Status:
+   input.form-control#status(type='text')
+  button.btn.btn-default(submit) Update
+    button.btn.btn-danger(cancel) Cancel

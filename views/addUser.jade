@@ -1,0 +1,20 @@
+extends layout
+
+block content
+ div.container
+  h1 Add User
+  form(method ="post" action = "/users/addUser")
+   div.form-group
+    label#name User Name:
+    input.form-control#name(type='text' name="name")
+   div.form-group
+    label#add Address:
+    input.form-control#add(type='text' name ="add")
+   div.form-group
+    label#email Email:
+    input.form-control#email(type='text' name = "email")
+   div.form-group
+    label#status Status:
+    input.form-control#status(type='text' name = "status")
+    button.btn.btn-default(type='submit') Submit
+    button.btn.btn-danger(type='cancel') Cancel
