@@ -3,17 +3,18 @@ extends layout
 block content
  div.container
   h1 Edit User
+   form(method ="post" action = "/users/edit")
   div.form-group
    label#name User Name:
-   input.form-control#name(type='text')
+   input.form-control#name(type='text' value='#{user.username}' name="name")
   div.form-group
    label#add Address:
-   input.form-control#add(type='text')
+   input.form-control#add(type='text' value='#{user.address}' name="add")
   div.form-group
    label#email Email:
-   input.form-control#email(type='text')
+   input.form-control#email(type='text' value = '#{user.email}' name="email")
   div.form-group
    label#status Status:
-   input.form-control#status(type='text')
-  button.btn.btn-default(submit) Update
-    button.btn.btn-danger(cancel) Cancel
+   input.form-control#status(type='text' value='#{user.status}' name="status")
+  button.btn.btn-default(type="submit") Update
+    button.btn.btn-danger(type="submit") Cancel

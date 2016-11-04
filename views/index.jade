@@ -5,19 +5,22 @@ block content
   h1 All Users	
   table.table.table-bordered.table-striped.table-hover
    tr
-    th Id
+    th ID
     th Name
     th Address
     th Email
     th Status
-    th Action
-   tr
-    td 1
-    td Raj Kumar Koju
-    td Bhaktapur
-    td koju96@gmail.com
-    td Active
-    td
-     a.btn.btn-success.btn-sm(href='users/edit') Edit
-     a.btn.btn-danger.btn-sm(href='users/delete') Delete	
+    th(colspan=2) Action
+    - var x = 0;
+   for user in users
+     tr
+       td #{++x}
+       td #{user.username}
+       td #{user.address}
+       td #{user.email}
+       td #{user.status}
+       td
+        a.btn.btn-success.btn-sm(href='users/edit?id=#{user._id}') Edit 
+       td
+        a.btn.btn-danger(href='users?id=#{user._id}') Delete	
   a.pull-right.btn.btn-primary.btn-sm(href='users/addUser') Add User

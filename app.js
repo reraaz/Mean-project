@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var mongo = require('mongodb');
 
 var mongoose = require('mongoose');
-var mongoURI = "mongodb://127.0.0.1:27017/a";
+var mongoURI = "mongodb://127.0.0.1:27017/table";
 var MongoDB = mongoose.connect(mongoURI).connection;
 MongoDB.on('error', function(err) { console.log(err.message); });
 MongoDB.once('open', function() {

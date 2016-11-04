@@ -1,0 +1,12 @@
+extends layout
+
+block content
+ - var x = 5;
+ div
+   ul
+     - for (var i=1; i<=x; i++) {
+       li= i + ". Hello"
+     - }
+
+     for user in users
+     p #{user.username}

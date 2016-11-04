@@ -2,8 +2,7 @@ var mongoose = require('mongoose');
 
 var UserSchema = mongoose.Schema({
 	username : {
-		type: String,
-		index: true
+		type: String
 	},
 	address:{
 		type:String
@@ -33,6 +32,15 @@ module.exports.getUserById = function(id,callback){
 	User.findById(id,callback);
 };
 
-module.exports.getAll = function(){
-	User.find();
-}
+module.exports.getAll = function(callback){
+	User.find({}, function(err, user){
+		if(err) return callback(err)
+			callback(null, user)
+	});
+
+module.exports.deletedata = function(id, callback){
+	User.remove({"_id": id}, callback);
+};
+
+// module.exports.model= mongoose.model('User', User);
+};
