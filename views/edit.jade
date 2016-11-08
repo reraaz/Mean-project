@@ -4,7 +4,7 @@ block content
  div.container
   h1 Edit User
   form(method ="post" action = "/users/edit")
-    input.form-control(type="hidden" value='#{user._id}' name="id")
+    input.form-control(type="hidden" value='#{user._id}' name="id" )
     div.form-group
      label#name User Name:
      input.form-control#name(type='text' value='#{user.username}' name="name")

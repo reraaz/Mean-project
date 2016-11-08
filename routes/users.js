@@ -81,7 +81,7 @@ router.post('/edit', function(req, res){
 	// console.log(id);
 	User.updatedata(id,name,add,email,status,function(err,user){
 		if(err) throw err;
-	})
+	});
 
 	res.redirect('/');
 }
