@@ -47,7 +47,7 @@ module.exports.updatedata = function(id,name,add,email,status,callback){
 		{username: name,
 		address: add,
 		email: email,
-		status: status}	, callback);
+		status: status}, callback);
 };
 // module.exports.model= mongoose.model('User', User);
 };
