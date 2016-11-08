@@ -3,7 +3,7 @@ extends layout
 block content
  div.container
   h1 All Users	
-  table.table.table-bordered.table-striped.table-hover
+  table.table.table-bordered.table-striped.table-hover.table-responsive
    tr
     th ID
     th Name
@@ -22,5 +22,5 @@ block content
        td
         a.btn.btn-success.btn-sm(href='users/edit?id=#{user._id}') Edit 
        td
-        a.btn.btn-danger(href='users?id=#{user._id}') Delete	
+        a.btn.btn-danger(href='users?id=#{user._id}' onclick="return confirm('Are you sure?');") Delete	
   a.pull-right.btn.btn-primary.btn-sm(href='users/addUser') Add User

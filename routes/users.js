@@ -28,8 +28,16 @@ router.get('/edit',function(req,res){
 	// console.log(id);
 });
 
+
 router.post('/addUser', function(req,res){
 	// console.log('Hello');
+	
+	 if (req.body.cancel == "cancel")
+	{
+		res.redirect('/')
+	}
+	else
+	{
 	var name = req.body.name;
 	var add = req.body.add;
 	var email = req.body.email;
@@ -51,15 +59,34 @@ router.post('/addUser', function(req,res){
 
 		// req.flash('success_msg','You are registered and now log in');
 		res.redirect('/');
+	}
 		
 
 });
 
 router.post('/edit', function(req, res){
+	
+	if(req.body.cancel == "cancel"){
+		 // var id = req.body.id;
+		// console.log(id);
+		res.redirect('/');
+
+	}
+	else{
 	var name = req.body.name;
 	var add = req.body.add;
 	var email = req.body.email;
 	var status = req.body.status;
+	var id = req.body.id;
+	// console.log(id);
+	User.updatedata(id,name,add,email,status,function(err,user){
+		if(err) throw err;
+	})
+
+	res.redirect('/');
+}
+
+	// var update = 
 });
 
 router.get('/', function(req,res){

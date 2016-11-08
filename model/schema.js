@@ -42,5 +42,13 @@ module.exports.deletedata = function(id, callback){
 	User.remove({"_id": id}, callback);
 };
 
+module.exports.updatedata = function(id,name,add,email,status,callback){
+	User.update({ _id : id},
+		{username: name,
+		address: add,
+		email: email,
+		status: status}
+	, callback);
+};
 // module.exports.model= mongoose.model('User', User);
 };
